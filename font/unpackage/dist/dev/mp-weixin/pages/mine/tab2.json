@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "调解详情",
+  "usingComponents": {
+    "up-input": "../../uni_modules/uview-plus/components/u-input/u-input",
+    "up-textarea": "../../uni_modules/uview-plus/components/u-textarea/u-textarea"
+  }
+}

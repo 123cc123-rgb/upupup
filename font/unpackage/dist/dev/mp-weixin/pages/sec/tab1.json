@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "异常预警",
+  "usingComponents": {
+    "up-input": "../../uni_modules/uview-plus/components/u-input/u-input",
+    "up-button": "../../uni_modules/uview-plus/components/u-button/u-button",
+    "up-textarea": "../../uni_modules/uview-plus/components/u-textarea/u-textarea",
+    "up-upload": "../../uni_modules/uview-plus/components/u-upload/u-upload",
+    "up-picker": "../../uni_modules/uview-plus/components/u-picker/u-picker"
+  }
+}

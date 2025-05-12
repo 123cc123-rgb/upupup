@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- 外圆 -->
+    <circle cx="100" cy="100" r="90" stroke="#07C160" stroke-width="8" fill="white"/>
+    
+    <!-- 天平 -->
+    <path d="M70 80L130 80M100 80L100 60M60 120C60 109 69 100 80 100C91 100 100 109 100 120C100 131 91 140 80 140C69 140 60 131 60 120ZM120 120C120 109 129 100 140 100C151 100 160 109 160 120C160 131 151 140 140 140C129 140 120 131 120 120Z" 
+          stroke="#07C160" 
+          stroke-width="8" 
+          stroke-linecap="round" 
+          stroke-linejoin="round"/>
+    
+    <!-- 文字 -->
+    <text x="100" y="170" 
+          font-family="Arial" 
+          font-size="24" 
+          fill="#07C160" 
+          text-anchor="middle" 
+          font-weight="bold">法律社区</text>
+</svg> 

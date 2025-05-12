@@ -1,0 +1,1 @@
+{"version":3,"file":"settings.js","sources":["common/js/settings.js"],"sourcesContent":["export const base_url = 'http://127.0.0.1:8000/index'\r\n// export const base_url = 'http://211.144.114.133:8500/index'\r\n"],"names":[],"mappings":";AAAY,MAAC,WAAW;;"}

@@ -1,0 +1,65 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/index/desc",
+    "pages/sec/index",
+    "pages/sec/tab1",
+    "pages/sec/tab2",
+    "pages/sec/tab3",
+    "pages/thd/index",
+    "pages/thd/fabu",
+    "pages/mine/index",
+    "pages/mine/information",
+    "pages/mine/search_talk",
+    "pages/mine/list1",
+    "pages/mine/list2",
+    "pages/mine/list3",
+    "pages/mine/tab1",
+    "pages/mine/tab2",
+    "pages/mine/tab3",
+    "pages/login/index"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "backgroundColor": "#ffffff",
+    "color": "#8a8a8a",
+    "selectedColor": "#04c464",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "/static/tab/forum.png",
+        "selectedIconPath": "/static/tab/forum_selected.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/sec/index",
+        "iconPath": "/static/tab/profile.png",
+        "selectedIconPath": "/static/tab/profile_selected.png",
+        "text": "群防群治"
+      },
+      {
+        "pagePath": "pages/thd/index",
+        "iconPath": "/static/tab/forum.png",
+        "selectedIconPath": "/static/tab/forum_selected.png",
+        "text": "论坛"
+      },
+      {
+        "pagePath": "pages/mine/index",
+        "iconPath": "/static/tab/profile.png",
+        "selectedIconPath": "/static/tab/profile_selected.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "用于获取当前城市位置"
+    }
+  },
+  "usingComponents": {}
+}

@@ -1,0 +1,1 @@
+{"version":3,"file":"fabu.js","sources":["../../HBuilderX/plugins/uniapp-cli-vite/uniPage:/cGFnZXMvdGhkL2ZhYnUudnVl"],"sourcesContent":["import MiniProgramPage from 'D:/1b/re_font/pages/thd/fabu.vue'\nwx.createPage(MiniProgramPage)"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AACA,GAAG,WAAW,eAAe;"}

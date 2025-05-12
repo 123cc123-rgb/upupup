@@ -1,0 +1,199 @@
+{
+
+	"easycom": {
+		"autoscan": true,
+		"custom": {
+			"^u--(.*)": "@/uni_modules/uview-plus/components/u-$1/u-$1.vue",
+			"^up-(.*)": "@/uni_modules/uview-plus/components/u-$1/u-$1.vue",
+			"^u-([^-].*)": "@/uni_modules/uview-plus/components/u-$1/u-$1.vue"
+		}
+	},
+
+	"pages": [ 
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "首页"
+			}
+		},
+		{
+			"path" : "pages/index/desc",
+			"style" : 
+			{
+				"navigationBarTitleText" : "推文详情"
+			}
+		},
+		{
+			"path" : "pages/sec/index",
+			"style" : 
+			{
+				"navigationBarTitleText" : "群防群治"
+			}
+		},
+		{
+			"path" : "pages/sec/tab1",
+			"style" : 
+			{
+				"navigationBarTitleText" : "异常预警"
+			}
+		},
+		{
+			"path" : "pages/sec/tab2",
+			"style" : 
+			{
+				"navigationBarTitleText" : "调解申请"
+			}
+		},
+		{
+			"path" : "pages/sec/tab3",
+			"style" : 
+			{
+				"navigationBarTitleText" : "投诉监督"
+			}
+		},
+		{
+			"path" : "pages/thd/index",
+			"style" : 
+			{
+				"navigationBarTitleText" : "论坛"
+			}
+		},
+		{
+			"path" : "pages/thd/fabu",
+			"style" : 
+			{
+				"navigationBarTitleText" : "发布帖子"
+			}
+		},
+		{
+			"path" : "pages/mine/index",
+			"style" : 
+			{
+				"navigationBarTitleText" : "我的"
+			}
+		},
+		{
+			"path" : "pages/mine/information",
+			"style" : 
+			{
+				"navigationBarTitleText" : "个人信息"
+			}
+		},
+		{
+			"path" : "pages/mine/search_talk",
+			"style" : 
+			{
+				"navigationBarTitleText" : "search我的帖子"
+			}
+		},
+		{
+			"path" : "pages/mine/list1",
+			"style" : 
+			{
+				"navigationBarTitleText" : "我的上报"
+			}
+		},
+		{
+			"path" : "pages/mine/list2",
+			"style" : 
+			{
+				"navigationBarTitleText" : "我的调解"
+			}
+		},
+		{
+			"path" : "pages/mine/list3",
+			"style" : 
+			{
+				"navigationBarTitleText" : "我的投诉"
+			}
+		},
+		{
+			"path" : "pages/mine/tab1",
+			"style" : 
+			{
+				"navigationBarTitleText" : "上报详情"
+			}
+		},
+		{
+			"path" : "pages/mine/tab2",
+			"style" : 
+			{
+				"navigationBarTitleText" : "调解详情"
+			}
+		},
+		{
+			"path" : "pages/mine/tab3",
+			"style" : 
+			{
+				"navigationBarTitleText" : "投诉详情"
+			}
+		},
+		{
+			"path" : "pages/login/index",
+			"style" : 
+			{
+				"navigationBarTitleText" : "登录"
+			}
+		}
+		
+	],
+	"tabBar": {
+		"backgroundColor": "#ffffff",
+		"color": "#8a8a8a",
+		"selectedColor": "#04c464",
+		
+	
+		"list": [
+			{
+					
+					"pagePath": "pages/index/index",
+					"iconPath": "/static/tab/forum.png",
+					"selectedIconPath": "/static/tab/forum_selected.png",
+					"text": "首页"
+			
+				},
+				{
+					
+					"pagePath": "pages/sec/index",
+					"iconPath": "/static/tab/profile.png",
+					"selectedIconPath": "/static/tab/profile_selected.png",
+					"text": "群防群治"
+			
+				},
+			
+				{
+			
+					
+					"pagePath": "pages/thd/index",
+					"iconPath": "/static/tab/forum.png",
+					"selectedIconPath": "/static/tab/forum_selected.png",
+					"text": "论坛"
+			
+				},
+			
+				{
+					
+					"pagePath": "pages/mine/index",
+					"iconPath": "/static/tab/profile.png",
+					"selectedIconPath": "/static/tab/profile_selected.png",
+					"text": "我的"
+				}
+			
+			
+		]
+	
+	
+	
+	
+	},
+	
+	
+	
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	},
+	"uniIdRouter": {}
+}

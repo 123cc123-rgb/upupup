@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "调解申请",
+  "usingComponents": {
+    "up-input": "../../uni_modules/uview-plus/components/u-input/u-input",
+    "up-textarea": "../../uni_modules/uview-plus/components/u-textarea/u-textarea",
+    "up-upload": "../../uni_modules/uview-plus/components/u-upload/u-upload",
+    "up-button": "../../uni_modules/uview-plus/components/u-button/u-button",
+    "up-picker": "../../uni_modules/uview-plus/components/u-picker/u-picker"
+  }
+}

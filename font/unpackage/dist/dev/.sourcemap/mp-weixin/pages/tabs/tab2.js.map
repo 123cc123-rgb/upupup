@@ -1,0 +1,1 @@
+{"version":3,"file":"tab2.js","sources":["../../HBuilderX/plugins/uniapp-cli-vite/uniPage:/cGFnZXMvdGFicy90YWIyLnZ1ZQ"],"sourcesContent":["import MiniProgramPage from 'D:/1b/jczl_font/pages/tabs/tab2.vue'\nwx.createPage(MiniProgramPage)"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AACA,GAAG,WAAW,eAAe;"}

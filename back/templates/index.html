@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdn.bootcss.com/echarts/4.2.1-rc1/echarts.min.js"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div style="display: flex;flex-direction:row">
+    <div id = "up1" style="width: 570px;height:430px;"></div>
+    <div id = "up2" style="width: 570px;height:430px;"></div>
+</div>
+
+<div style="width: 100%;min-height:100vh;display: flex;flex-direction: row;justify-content: space-around;">
+    <div id="chart1" style="width: 570px;height:430px;"></div>
+    <div id="chart2" style="width: 570px;height:430px;"></div>
+    <div id="chart3" style="width: 570px;height:430px;"></div>
+</div>
+
+
+<script type="text/javascript">
+    // 使用 |safe 防止转义
+    const type_up1 = JSON.parse('{{ type_up1|safe }}');
+    const type_up2 = JSON.parse('{{ type_up2|safe }}');
+    const data_up1 = JSON.parse('{{ data_up1|safe }}');
+    const data_up2 = JSON.parse('{{ data_up2|safe }}');
+
+    const typeList1 = JSON.parse('{{ type_list_json1|safe }}');
+    const dataList1 = JSON.parse('{{ data_list_json1|safe }}');
+    const typeList2 = JSON.parse('{{ type_list_json2|safe }}');
+    const dataList2 = JSON.parse('{{ data_list_json2|safe }}');
+    const typeList3 = JSON.parse('{{ type_list_json3|safe }}');
+    const dataList3 = JSON.parse('{{ data_list_json3|safe }}');
+    var up1 = echarts.init(document.getElementById('up1'))
+    var option_up1 = {
+                tooltip: {
+                trigger: 'item'
+                },
+                legend: {
+                    top: '5%',
+                    left: 'center'
+                },
+                series: [
+                    {
+                    name: 'Access From',
+                    type: 'pie',
+                    radius: ['40%', '70%'], //圆厚度
+                    center: ['45%', '55%'], //左右上下位置
+                    startAngle: 0,
+                    endAngle: 180,
+                    data: data_up1,
+                    label: {formatter: '{b}：{c}人  ({d}%) '}
+                    }
+                ]
+        };
+    up1.setOption(option_up1);
+
+    var up2 = echarts.init(document.getElementById('up2'))
+    var option_up2 = {
+        title: {
+            text: '调解任务'
+        },
+        tooltip: {},
+        legend: {
+            data: ['']
+        },
+        xAxis: {
+            data: type_up2
+        },
+        yAxis: {},
+            series: [{
+                name: '数量',
+                type: 'bar',
+                data: data_up2,
+                itemStyle: {
+                    normal: {
+                    color: function(params) {
+                    var colorList = ['#64BD3D','#EE9201','#29AAE3', '#B74AE5','#0AAF9F','#E89589','#16A085','#4A235A','#C39BD3 ','#F9E79F','#BA4A00','#ECF0F1','#616A6B','#EAF2F8','#4A235A','#3498DB' ];
+                    return colorList[params.dataIndex]}
+                    },
+                },
+                label: {
+                    show: true,
+                    formatter: '{c}',
+                    position: 'top'
+                }
+            }]
+        };
+    up2.setOption(option_up2);
+
+    var myChart1 = echarts.init(document.getElementById('chart1'));
+    var option1 = {
+        title: {
+            text: '异常类型数量统计'
+        },
+        tooltip: {
+            trigger: 'item',
+            formatter: '{a} <br/>{b} : 数量{c} ({d}%)'
+        },
+        legend: {
+            bottom: 10,
+            left: 'center',
+            data: typeList1
+        },
+        series: [{
+            name: '类型',
+            type: 'pie',
+            radius: '65%',
+            center: ['50%', '60%'],
+            selectedMode: 'single',
+            data: dataList1
+        }]
+    };
+    myChart1.setOption(option1);
+
+
+    var myChart2 = echarts.init(document.getElementById('chart2'));
+    var option2 = {
+        title: {
+            text: '纠纷类型数量统计'
+        },
+        tooltip: {
+            trigger: 'item',
+            formatter: '{a} <br/>{b} : 数量{c} ({d}%)'
+        },
+        legend: {
+            bottom: 10,
+            left: 'center',
+            data: typeList2
+        },
+        series: [{
+            name: '类型',
+            type: 'pie',
+            radius: '65%',
+            center: ['50%', '50%'],
+            selectedMode: 'single',
+            {#data: [#}
+            {#    {value: 100, name: 'CityC'},#}
+            {#    {value: 100, name: 'CityD'},#}
+            {#    {value: 100, name: 'CityB'},#}
+            {#    {value: 100, name: 'CityA'}#}
+            {#]#}
+            data: dataList2
+        }]
+    };
+    myChart2.setOption(option2);
+
+
+    var myChart3 = echarts.init(document.getElementById('chart3'));
+    var option3 = {
+        title: {
+            text: '投诉类型数量统计'
+        },
+        tooltip: {
+            trigger: 'item',
+            formatter: '{a} <br/>{b} : 数量{c} ({d}%)'
+        },
+        legend: {
+            bottom: 10,
+            left: 'center',
+            data: typeList3
+        },
+        series: [{
+            name: '类型',
+            type: 'pie',
+            radius: '65%',
+            center: ['50%', '50%'],
+            selectedMode: 'single',
+            {#data: [#}
+            {#    {value: 100, name: 'CityC'},#}
+            {#    {value: 100, name: 'CityD'},#}
+            {#    {value: 100, name: 'CityB'},#}
+            {#    {value: 100, name: 'CityA'}#}
+            {#]#}
+            data: dataList3
+        }]
+    };
+    myChart3.setOption(option3);
+</script>
+</body>
+
+</html>

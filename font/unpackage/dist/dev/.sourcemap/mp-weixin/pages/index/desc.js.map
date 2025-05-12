@@ -1,0 +1,1 @@
+{"version":3,"file":"desc.js","sources":["../../HBuilderX/plugins/uniapp-cli-vite/uniPage:/cGFnZXMvaW5kZXgvZGVzYy52dWU"],"sourcesContent":["import MiniProgramPage from 'D:/1b/re_font/pages/index/desc.vue'\nwx.createPage(MiniProgramPage)"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AACA,GAAG,WAAW,eAAe;"}

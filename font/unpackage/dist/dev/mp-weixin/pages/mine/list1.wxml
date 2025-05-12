@@ -1,0 +1,1 @@
+<view class="{{['container', 'data-v-2a2eb4d4', virtualHostClass]}}" style="{{virtualHostStyle}}" hidden="{{virtualHostHidden || false}}" id="{{b}}"><view wx:for="{{a}}" wx:for-item="item" class="data-item data-v-2a2eb4d4" bindtap="{{item.c}}"><view class=" data-v-2a2eb4d4">{{item.a}}</view><view class=" data-v-2a2eb4d4">{{item.b}}</view></view></view>

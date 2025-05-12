@@ -1,0 +1,1 @@
+{"version":3,"file":"list2.js","sources":["../../HBuilderX/plugins/uniapp-cli-vite/uniPage:/cGFnZXMvdGFiX2xpc3QvbGlzdDIudnVl"],"sourcesContent":["import MiniProgramPage from 'D:/1b/jczl_font/pages/tab_list/list2.vue'\nwx.createPage(MiniProgramPage)"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AACA,GAAG,WAAW,eAAe;"}

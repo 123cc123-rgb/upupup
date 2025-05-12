@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "首页",
+  "usingComponents": {
+    "up-swiper": "../../uni_modules/uview-plus/components/u-swiper/u-swiper",
+    "up-collapse-item": "../../uni_modules/uview-plus/components/u-collapse-item/u-collapse-item",
+    "up-collapse": "../../uni_modules/uview-plus/components/u-collapse/u-collapse"
+  }
+}
