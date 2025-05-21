@@ -14,16 +14,13 @@ from rest_framework.filters import SearchFilter
 
 
 
-
 class GetTuWenDescView(GenericViewSet, ListModelMixin):
     queryset = TuWen.objects.all()
     serializer_class = TuWenSerializer
-
     filter_backends = [SearchFilter]
     search_fields = ['id']
 
 
-# 用户登录（手机号快捷登录）
 class LoginByPhoneView(APIView):
     def post(self, request):
         js_code = request.data.get('code2')
@@ -87,7 +84,6 @@ class LoginByPhoneView(APIView):
                 return ApiResponse(status=500)
 
         else:
-
             return ApiResponse(status=500)
 
 
@@ -110,16 +106,13 @@ class GetUserInfoView(APIView):
         return ApiResponse(data=return_data)
 
 
-# banner
 class GetBannerView(GenericViewSet, ListModelMixin):
     queryset = Banner.objects.all()
     serializer_class = BannerSerializer
 
 
-# 前端首页data
 class GetIndexDataView(APIView):
     def get(self, request):
-
         re_data = {}
         objs = TuWen.objects.all()
         for i in objs:
@@ -128,28 +121,23 @@ class GetIndexDataView(APIView):
                     'title': i.title,
                     'created_date': i.created_date,
                     'id': i.id,
-
                 })
             else:
                 re_data[i.type.name] = [{
                     'title': i.title,
                     'created_date': i.created_date,
                     'id': i.id,
-
                 }]
 
         return ApiResponse(data=re_data)
 
 
-# 获取用户积分
 class GetJiFenView(APIView):
     def get(self, request):
         uuid = request.query_params.get('uuid')
         user_obj = User.objects.filter(uuid=uuid).first()
-
         re_data = [0, []]
         jifen_objs = JiFenLog.objects.filter(user=user_obj).all()
-
         if jifen_objs:
             for i in jifen_objs:
                 re_data[0] += i.jifen
@@ -162,7 +150,6 @@ class GetJiFenView(APIView):
         return ApiResponse(data=re_data)
 
 
-# 获取当前城市
 class GetCityView(APIView):
     def get(self, request):
         uuid = request.query_params.get('uuid')
@@ -173,20 +160,16 @@ class GetCityView(APIView):
         response = requests.get(url)
         city = json.loads(response.content).get('regeocode').get('addressComponent').get('city')
         desc_city = json.loads(response.content).get('regeocode').get('formatted_address')
-
         user_obj.address = desc_city
         user_obj.save()
-
         return ApiResponse(data=[city, desc_city])
 
 
-# 获取异常类型
 class GetYiChangTypeView(GenericViewSet, ListModelMixin):
     queryset = YiChangType.objects.all()
     serializer_class = YiChangTypeSerializer
 
 
-# 创建资源
 class CreateYiChangView(GenericViewSet, CreateModelMixin):
     queryset = YiChang
     serializer_class = YiChangSerializer
@@ -201,7 +184,6 @@ class CreateYiChangView(GenericViewSet, CreateModelMixin):
         type_obj = YiChangType.objects.filter(id=type_id).first()
         user_obj = User.objects.filter(uuid=uuid).first()
         YiChang.objects.create(type=type_obj, user=user_obj, img=img, phone=phone, address=address, text=text)
-
         return ApiResponse()
 
 
@@ -212,14 +194,10 @@ class GetUuidView(APIView):
         }
         return ApiResponse(data=data)
 
-
-# 投诉类型
 class GetTouSuTypeView(GenericViewSet, ListModelMixin):
     queryset = TouSuType.objects.all()
     serializer_class = TouSuTypeSerializer
 
-
-# 创建投诉
 class CreateTouSuView(GenericViewSet, CreateModelMixin):
     queryset = TouSu
     serializer_class = TouSuSerializer
@@ -234,7 +212,6 @@ class CreateTouSuView(GenericViewSet, CreateModelMixin):
         img = request.data.get('img', False)
         img1 = request.data.get('img1', False)
         img2 = request.data.get('img2', False)
-
         uuid = request.data.get('uuid')
         type_obj = TouSuType.objects.filter(id=type_id).first()
         user_obj = User.objects.filter(uuid=uuid).first()
@@ -252,17 +229,12 @@ class CreateTouSuView(GenericViewSet, CreateModelMixin):
                                          another_user=another_user, data_id=data_id)
             y_obj.img = request.FILES['img']
             y_obj.save()
-
             return ApiResponse()
 
-
-# 纠纷类型
 class GetJiuFenTypeView(GenericViewSet, ListModelMixin):
     queryset = JiuFenType.objects.all()
     serializer_class = JiuFenTypeSerializer
 
-
-# 创建纠纷
 class CreateJiuFenView(GenericViewSet, CreateModelMixin):
     queryset = JiuFen
     serializer_class = JiuFenSerializer
@@ -271,7 +243,6 @@ class CreateJiuFenView(GenericViewSet, CreateModelMixin):
         data_id = request.data.get('data_id', False)
         type_id = request.data.get('type_id')
         uuid = request.data.get('uuid')
-
         apply_user = request.data.get('apply_user')
         apply_phone = request.data.get('apply_phone')
         apply_address = request.data.get('apply_address')
@@ -280,7 +251,6 @@ class CreateJiuFenView(GenericViewSet, CreateModelMixin):
         other_address = request.data.get('other_address')
         text = request.data.get('text')
         suqiu = request.data.get('suqiu')
-
         img = request.data.get('img', False)
         img1 = request.data.get('img1', False)
         img2 = request.data.get('img2', False)
@@ -316,13 +286,9 @@ class CreateJiuFenView(GenericViewSet, CreateModelMixin):
             return ApiResponse()
 
 
-
-
-# 获取异常列表数据
 class GetYiChangListView(GenericViewSet, ListModelMixin):
     queryset = YiChang.objects.all()
     serializer_class = YiChangSerializer2
-
     filter_backends = [SearchFilter]
     search_fields = ['user__uuid']
 
@@ -330,7 +296,6 @@ class GetYiChangListView(GenericViewSet, ListModelMixin):
 class GetJiuFenListView(GenericViewSet, ListModelMixin):
     queryset = JiuFen.objects.all()
     serializer_class = JiuFenSerializer2
-
     filter_backends = [SearchFilter]
     search_fields = ['user__uuid']
 
@@ -338,17 +303,13 @@ class GetJiuFenListView(GenericViewSet, ListModelMixin):
 class GetTouSuListView(GenericViewSet, ListModelMixin):
     queryset = TouSu.objects.all()
     serializer_class = TouSuSerializer2
-
     filter_backends = [SearchFilter]
     search_fields = ['user__uuid']
 
 
-
-# 获取异常详情
 class GetYiChangDescView(GenericViewSet, ListModelMixin):
     queryset = YiChang.objects.all()
     serializer_class = YiChangSerializer3
-
     filter_backends = [SearchFilter]
     search_fields = ['id']
 
@@ -356,7 +317,6 @@ class GetYiChangDescView(GenericViewSet, ListModelMixin):
 class GetJiuFenDescView(GenericViewSet, ListModelMixin):
     queryset = JiuFen.objects.all()
     serializer_class = JiuFenSerializer3
-
     filter_backends = [SearchFilter]
     search_fields = ['id']
 
@@ -364,12 +324,10 @@ class GetJiuFenDescView(GenericViewSet, ListModelMixin):
 class GetTouSuDescView(GenericViewSet, ListModelMixin):
     queryset = TouSu.objects.all()
     serializer_class = TouSuSerializer3
-
     filter_backends = [SearchFilter]
     search_fields = ['id']
 
 
-# 创建帖子
 class CreateTalkView(APIView):
     def post(self,request):
         uuid = request.data.get('uuid')
@@ -378,7 +336,6 @@ class CreateTalkView(APIView):
         content = request.data.get('content')
         user_obj = User.objects.filter(uuid=uuid).first()
         Talk.objects.create(author=user_obj,title=title,data_id=data_id,content=content)
-
         return ApiResponse()
 
 
@@ -388,7 +345,6 @@ class GetTalkView(APIView):
         top_list = []
         uuid = request.query_params.get('uuid')
         user_obj = User.objects.filter(uuid=uuid).first()
-
         talk_objs = Talk.objects.all().order_by('-id')
         if talk_objs:
             for i in talk_objs:
@@ -426,7 +382,6 @@ class GetTalkView(APIView):
 
 
                     top_list.append(data_item)
-
             for i in talk_objs:
                 if i.is_top == False:
                     data_item = {
@@ -462,9 +417,7 @@ class GetTalkView(APIView):
                     re_data.append(data_item)
 
         top_list = top_list + re_data
-
         return ApiResponse(data=top_list)
-
 
 
 class GetMyTalkView(APIView):
@@ -487,9 +440,7 @@ class GetMyTalkView(APIView):
                     data_item['likeCount'] = i.likeCount
                     data_item['data_id'] = i.data_id
                     data_item['id'] = i.id
-
                     way_objs = user_obj.dianzan_list.all()
-
                     result = False
 
                     if way_objs:
@@ -508,8 +459,6 @@ class GetMyTalkView(APIView):
                                 'id':n.id,
                                 'data_id':n.data_id,
                             })
-
-
                     top_list.append(data_item)
 
             for i in talk_objs:
@@ -547,10 +496,9 @@ class GetMyTalkView(APIView):
                     re_data.append(data_item)
 
         top_list = top_list + re_data
-
         return ApiResponse(data=top_list)
 
-# 添加喜欢
+
 class AddScangView(APIView):
     def post(self, request):
         uuid = request.data.get('uuid')
@@ -560,12 +508,9 @@ class AddScangView(APIView):
         talk_obj.likeCount += 1
         talk_obj.save()
         user_obj.dianzan_list.add(talk_obj)
-
-
         return ApiResponse()
 
 
-# 取消喜欢
 class QXScangView(APIView):
     def post(self, request):
         uuid = request.data.get('uuid')
@@ -575,10 +520,8 @@ class QXScangView(APIView):
         talk_obj.likeCount -= 1
         talk_obj.save()
         user_obj.dianzan_list.remove(talk_obj)
-
         return ApiResponse()
 
-# 添加评论
 
 class AddCommentsView(APIView):
     def post(self, request):
@@ -589,10 +532,7 @@ class AddCommentsView(APIView):
         user_obj = User.objects.filter(uuid=uuid).first()
         talk_obj = Talk.objects.filter(id=talk_id).first()
         Comments.objects.create(author=user_obj,data_id=data_id,content=content,talk=talk_obj)
-
-
         return ApiResponse()
-
 
 
 def index(request):
