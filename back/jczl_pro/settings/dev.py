@@ -11,27 +11,16 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
-
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
-# 获取项目根目录
-BASE_DIR = Path(__file__).resolve().parent.parent
-
 import os, sys
 
-# 添加应用目录到 Python 路径
+BASE_DIR = Path(__file__).resolve().parent.parent
 sys.path.append(os.path.join(BASE_DIR, 'apps'))
 sys.path.append(os.path.join(BASE_DIR))
 
-# 安全密钥，用于加密和解密会话和密码
 SECRET_KEY = 'your_generated_secret_key_here'
-
-# 开发模式，True表示开发环境，False表示生产环境
 DEBUG = True
-
-# 允许的主机列表，*表示所有主机
 ALLOWED_HOSTS = ['*']
 
-# 安装的应用程序列表
 INSTALLED_APPS = [
     'simpleui',
     'django.contrib.admin',
@@ -53,9 +42,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'corsheaders.middleware.CorsMiddleware',  # cors的中间件
+    'corsheaders.middleware.CorsMiddleware',  
 ]
-# 根URL配置
+
 ROOT_URLCONF = 'jczl_pro.urls'
 # 模板配置
 TEMPLATES = [
@@ -74,11 +63,10 @@ TEMPLATES = [
         },
     },
 ]
-# WSGI 应用程序配置
+
 WSGI_APPLICATION = 'jczl_pro.wsgi.application'
 
 
-# 数据库配置
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -90,7 +78,7 @@ DATABASES = {
     }
 }
 
-# 密码验证器配置
+
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -107,14 +95,11 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-
 LANGUAGE_CODE = 'zh-hans'
 TIME_ZONE = 'Asia/Shanghai'
 USE_I18N = True
 USE_TZ = False
 
-
-# 静态文件配置
 STATIC_URL = 'static/'
 
 # 默认自动字段类型
@@ -139,7 +124,6 @@ LOGGING = {
     },
     'handlers': {
         'console': {
-            # 实际开发建议使用WARNING
             'level': 'DEBUG',
             'filters': ['require_debug_true'],
             'class': 'logging.StreamHandler',
@@ -165,7 +149,7 @@ LOGGING = {
     'loggers': {
         'django': {
             'handlers': ['console', 'file'],
-            'propagate': True,  # 是否让日志信息继续冒泡给其他的日志处理系统
+            'propagate': True,  
         },
     }
 }
@@ -197,7 +181,7 @@ SIMPLEUI_CONFIG = {
 
 
         {
-            'app': 'index',  # 关联哪个app
+            'app': 'index',  
             'name': '设置',
             'icon': 'fas fa-user-shield',
             'models': [
@@ -215,7 +199,7 @@ SIMPLEUI_CONFIG = {
             ]
         },
         {
-            'app': 'index',  # 关联哪个app
+            'app': 'index', 
             'name': '信息数据',
             'icon': 'fas fa-user-shield',
             'models': [
